@@ -1,7 +1,7 @@
 # AstrometricsPy
 
 This repo is inspired in [Astrometrics](https://github.com/quintoandar/astrometrics) and it is intended to provide 
-something like what is in the Astronometrics Wiki page.
+a hands-on workshop like what is in the Astronometrics Wiki page.
   
 It has the following endpoints:
 
