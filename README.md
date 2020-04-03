@@ -9,7 +9,7 @@ It has the following endpoints:
     * `http://localhost:8080/words/meaning/<some-word>`
 
 2. Try to match two words based on [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance) (in english):
-    * `https://localhost:8080/words/match/<word-1>/<word-2>`
+    * `https://localhost:8080/words/match/<word1>/<word2>`
 
 ### Aims
 
