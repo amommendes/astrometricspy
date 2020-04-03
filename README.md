@@ -14,5 +14,6 @@ It has the following endpoints:
 ### Aims
 
 1 - Create Prometheus Metrics App
+
 2 - How to instrument Flask App
 
