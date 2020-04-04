@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  flask_server:
+    image: astronometricspy 
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    expose:
+      - 9001
+      - 9002
+      - 5001
+    ports:
+      - "5000:5000"
+      - "5001:9001"
+      - "5002:9002"
+
+    volumes:
+      - /home/amomluiz/projects/astrometricspy/app:/app
+    networks:
+      - astrometricspy
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - astrometricspy
+  prometheus:
+      image: prom/prometheus:v2.17.1
+      container_name: prometheus
+      volumes:
+#        - ./prometheus:/etc/prometheus
+#        - ./prometheus_data:/prometheus
+        - ./prometheus/config:/etc/prometheus/
+      command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+        - '--storage.tsdb.path=/prometheus'
+        - '--web.console.libraries=/etc/prometheus/console_libraries'
+        - '--web.console.templates=/etc/prometheus/consoles'
+        - '--storage.tsdb.retention.time=200h'
+        - '--web.enable-lifecycle'
+      restart: unless-stopped
+      expose:
+        - 9090
+      ports:
+        - "9090:9090"
+      networks:
+        - astrometricspy
+      labels:
+        org.label-schema.group: "monitoring"
+
+networks:
+  astrometricspy:
+    driver: bridge

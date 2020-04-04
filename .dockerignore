@@ -1,0 +1,7 @@
+# docker ignore file
+venv
+.idea
+.git
+*__pycache_
+app/__pycache__/
+app/api/__pycache__/
