@@ -1,7 +1,7 @@
 # AstrometricsPy
 
 This repo is inspired in [Astrometrics](https://github.com/quintoandar/astrometrics) and it is intended to provide 
-something like what is in the Astronometrics Wiki page.
+a hands-on workshop like in the Astronometrics Wiki page.
   
 It has the following endpoints:
 
@@ -14,5 +14,6 @@ It has the following endpoints:
 ### Aims
 
 1 - Create Prometheus Metrics App
+
 2 - How to instrument Flask App
 
