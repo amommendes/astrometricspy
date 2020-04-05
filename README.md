@@ -17,3 +17,11 @@ It has the following endpoints:
 
 2 - How to instrument Flask App
 
+### TODOs
+
+- [ ] Organize metrics inside endpoints and not in `__init__.py`
+- [ ] Create Grafana Dashboards Counting Words, HTTP Requests, Endpoints
+- [ ] Configure Prometheus volumes
+- [ ] Tracing
+    - [ ] [OpenTracing](https://github.com/opentracing/opentracing-python)
+
