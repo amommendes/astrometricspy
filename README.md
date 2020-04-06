@@ -17,6 +17,8 @@ It has the following endpoints:
 
 2 - How to instrument Flask App
 
+3 - Provide App tracing
+
 ### TODOs
 
 - [ ] Organize metrics inside endpoints and not in `__init__.py`
