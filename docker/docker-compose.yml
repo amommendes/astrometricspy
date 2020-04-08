@@ -14,7 +14,6 @@ services:
       - "5000:5000"
       - "5001:9001"
       - "5002:9002"
-
     volumes:
       - /home/amomluiz/projects/astrometricspy/app:/app
     networks:
@@ -22,6 +21,8 @@ services:
 
   grafana:
     image: grafana/grafana
+    volumes:
+      - ./grafana:/var/lib/grafana
     ports:
       - "3000:3000"
     networks:
@@ -30,8 +31,7 @@ services:
       image: prom/prometheus:v2.17.1
       container_name: prometheus
       volumes:
-#        - ./prometheus:/etc/prometheus
-#        - ./prometheus_data:/prometheus
+        - ./prometheus_data:/prometheus
         - ./prometheus/config:/etc/prometheus/
       command:
         - '--config.file=/etc/prometheus/prometheus.yml'
