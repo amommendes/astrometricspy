@@ -1,4 +1,4 @@
-from fuzzywuzzy import fuzz
+from rapidfuzz import fuzz
 from PyDictionary import PyDictionary
 from flask_restful import Resource
 from flask import g
